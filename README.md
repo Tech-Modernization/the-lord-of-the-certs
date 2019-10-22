@@ -1,9 +1,11 @@
-# cert-slayer
+# the-certificate-slayer
 
 This is a small RPG-battle style game written in Python3.
-Players take on the role of a hero battling Cloud Certifications while starting a new role at Contino.
+The player must answer multiple-choice questions to defeat a randomly-generated certification exam.
+Players who defeat all the certifications in a single run are granted the title of "Master Consultant".
 
-The code borrows heavily from a Udemy course written by Nick Germaine (https://github.com/nickgermaine).
+The code is based on a Udemy course written by Nick Germaine (https://github.com/nickgermaine), and my original fork (https://github.com/paulbygrave/cert-slayer).
+The code is intended to be a fun learning resource for teaching basic Python skills and additional questions/certifications can be added by any Contini who wishes to contribute.
 
 
 ## Running the program as a container
