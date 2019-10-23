@@ -46,7 +46,7 @@ class Opponent:
             current_hp = hp_string
         print("                                                         __________________________________________________ ")
         print(bcolors.BOLD + str(self.name.ljust(40, ' ')) + ":  " +
-            current_hp.ljust(11, " ") + "  |" + bcolors.FAIL + hp_bar + bcolors.ENDC + bcolors.BOLD + "|    ")
+            current_hp.ljust(11, " ") + "  |" + bcolors.FAIL + hp_bar + bcolors.ENDC + bcolors.BOLD)
 
 class Question:
     def __init__(self, question, answer, choices, correct):
@@ -58,6 +58,7 @@ class Question:
 # Set the object type "Question" as a named Tuple
 Question = namedtuple("Question", "question answer choices correct")
 
+# Create the Question objects and ensure each one has a different variable name so they can be referenced by the Opponent objects
 saa_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", "a) 1\nb) 2\nc) 3\nd) 4\nAnswer: ", "b"), 
                     Question("What is 2 + 2?", "2 + 2 is 4.", "a) 1\nb) 4\nc) 3\nd) 4\nAnswer: ", "b"),
                     Question("What is 3 + 3?", "3 + 3 is 6.", "a) 1\nb) 6\nc) 3\nd) 4\nAnswer: ", "b"),
@@ -83,15 +84,4 @@ possible_opponents = [Opponent("AWS Solutions Architect Associate", 2000, 1000, 
                       Opponent("Google Cloud Associate", 1000, 1000, af_questions),
                       Opponent("Azure Fundamentals", 1000, 1000, gca_questions),
                       Opponent("Certified Kubernetes Administrator", 1000, 1000, cka_questions)]
-
-# possible_opponents = [Opponent("AWS_Solutions_Architect_Associate".ljust(40, ' ')), 2000, 1000, saa_questions),
-#                     Opponent(str("Azure_Fundamentals".ljust(40, ' ')), 1000, 1000, af_questions)]
-# def ask_question():
-#     for question in enemy_questions:
-#         print(question.question)
-#         user_answer = input(question.choices).lower()
-#         if user_answer in question.correct:
-#             print("Correct")
-#         else:
-#             print("Incorrect", question.answer)
 
