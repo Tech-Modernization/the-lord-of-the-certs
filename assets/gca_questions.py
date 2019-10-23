@@ -6,103 +6,111 @@ Question = namedtuple("Question", "question choices correct")
 # Create the Question objects and ensure each one has a different variable name so they can be referenced by the Opponent objects
 # All the questions that belong to the Solutions Architect Associate Course
 gca_questions =  [
-    Question("""An application saves the logs to an S3 bucket. A user wants to keep the logs for one month for
-troubleshooting purposes, and then purge the logs.
 
-What feature will enable this?""", 
+    Question("""You are working on a project called 'contino', and want to list all the roles assigned to users in the project.
+    
+    Which of the following gcloud commands would you use?""", 
     # The possible answers
     [
-        "Adding a bucket policy on the S3 bucket.", 
-        "Configuring lifecycle configuration rules on the S3 bucket.", 
-        "Creating an IAM policy for the S3 bucket.", 
-        "Enabling CORS on the S3 bucket."
+        "gcloud iam list contino", 
+        "gcloud projects list contino", 
+        "gcloud projects get-iam-policy contino", 
+        "gcloud iam get-iam-policy contino"
     ], 
     # The correct answer
-    "b"), 
+    "c"), 
 
-    Question("""Company salespeople upload their sales figures daily. A Solutions Architect needs a durable storage
-solution for these documents that also protects against users accidentally deleting important
-documents.
+    Question("""You're working for a company as a Cloud Engineer. You have a managed instance group for which the autoscaling is
+enabled if CPU utilisation is 70%. Right now there are 4 instance available in this instance group. When you connect to one 
+of the instances, you can see the CPU utilisation is 75% and there are no new instances starting.
 
-Which action will protect against unintended user actions?""", 
+What could be the possible reason for not starting another instance here?""", 
     # The possible answers
     [
-        "Store data in an EBS volume and create snapshots once a week.", 
-        "Store data in an S3 bucket and enable versioning.", 
-        "Store data in two S3 buckets in different AWS regions.", 
-        "Store data on EC2 instance storage."], 
-    # The correct answer
-    "b"),
-
-    Question("""A Solutions Architect is designing a critical business application with a relational database that runs
-on an EC2 instance. It requires a single EBS volume that can support up to 16,000 IOPS.
-
-Which Amazon EBS volume type can meet the performance requirements of this application?""", 
-    # The possible answers
-    [
-        "EBS Provisioned IOPS SSD", 
-        "EBS Throughput Optimized HDD", 
-        "EBS General Purpose SSD", 
-        "EBS Cold HDD"
+        "It will take 60 seconds to launch a new instance.", 
+        "Autoscaling is not active.", 
+        "Average CPU usage of the instance group is less than 70%.", 
+        "None of the above."
     ], 
+    # The correct answer
+    "c"), 
+
+    Question("""You have been asked by a client to build a backend using Clojure and host it on Google Cloud with full freedom
+of choosing OS, applications, libraries etc.
+
+Which Google Cloud service will you use?""", 
+    # The possible answers
+    [
+        "Compute Engine", 
+        "App Engine Standard", 
+        "Cloud Function", 
+        "CloudRun"], 
     # The correct answer
     "a"),
 
-    Question("""An application running on EC2 instances processes sensitive information stored on Amazon S3. The
-information is accessed over the Internet. The security team is concerned that the Internet
-connectivity to Amazon S3 is a security risk.
+    Question("""You have been hired by a client who is planning to containerize their existing applications in such a way that
+they can perform a lift and shift very easily in the future if they plan to move away from Google Cloud.
 
-Which solution will resolve the security concern?""", 
+Which service will best suit this case?""", 
     # The possible answers
     [
-        "Access the data through an Internet Gateway.", 
-        "Access the data through a VPN connection.", 
-        "Access the data through a NAT Gateway.", 
-        "Access the data through a VPC endpoint for Amazon S3."], 
+        "Cloud Function", 
+        "App Engine Standard", 
+        "Kubernetes Engine", 
+        "CloudRun"
+    ], 
+    # The correct answer
+    "c"),
+
+    Question("""You are about to start working on a micro-service deployment project using Google Kubernetes Engine service. 
+The client needs everything on Google and wants you to maintain both frontend and backend code on Google Cloud as well.
+    
+Which service best suites this case?""", 
+    # The possible answers
+    [
+        "Cloud Storage", 
+        "Cloud Source Repository", 
+        "Google Container Registry", 
+        "GitHub"], 
         # The correct answer
-        "d"),
+        "b"),
 
-    Question("""A company is storing an access key (access key ID and secret access key) in a text file on a custom
-AMI. The company uses the access key to access DynamoDB tables from instances created from the
-AMI. The security team has mandated a more secure solution.
+    Question("""You are working as a Systems Administrator and have been asked to make sure that all images are patched up to date 
+and developers are not allowed to use old images with are not up to date, in order to comply with PCI.
 
-Which solution will meet the security team’s mandate?""", 
+How would you achieve this?""", 
     # The possible answers
     [
-        "Put the access key in an S3 bucket, and retrieve the access key on boot from the instance.", 
-        "Pass the access key to the instances through instance user data.", 
-        "Obtain the access key from a key server launched in a private subnet.", 
-        "Create an IAM role with permissions to access the table, and launch all instances with the new role."], 
+        "Drop an email to all the developers instructing which images to use whenever you patch going forwards.", 
+        "Mark images as deprecated to prevent users from deploying from the old images.", 
+        "Mark images as obselete to prevent users from deploying from the old images.", 
+        "None of the above."], 
         # The correct answer
-        "d"),
+        "c"),
 
-    Question("""An application requires a highly available relational database with an initial storage capacity of 8 TB.
-The database will grow by 8 GB every day. To support expected traffic, at least eight read replicas will
-be required to handle database reads.
-
-Which option will meet these requirements?""", 
+    Question("""You are building an architecure for one of your clients with a requirement of streaming millions of requests
+with high availability and durability along with HIPPA compliance.
+    
+Which managed service will you prefer?""", 
     # The possible answers
     [
-        "DynamoDB", 
-        "Amazon S3", 
-        "Amazon Aurora", 
-        "Amazon Redshift"], 
+        "Cloud Function", 
+        "Cloud DataProc", 
+        "Cloud Pub/Sub", 
+        "RabbitMQ"], 
         # The correct answer
         "c"),  
 
-    Question("""A web application allows customers to upload orders to an S3 bucket. The resulting Amazon S3
-events trigger a Lambda function that inserts a message to an SQS queue. A single EC2 instance
-reads messages from the queue, processes them, and stores them in an DynamoDB table partitioned
-by unique order ID. Next month traffic is expected to increase by a factor of 10 and a Solutions
-Architect is reviewing the architecture for possible scaling problems.
-
-Which component is MOST likely to need re-architecting to be able to scale to accommodate the new traffic?""", 
+    Question("""You have been asked to deploy a highly available Kubernetes cluster using Google Kubernetes Engine by
+your manager While spinning up the cluster you realise you do not see the option to create a master.
+    
+What is the reason for this?""", 
     # The possible answers
     [
-        "Lambda function", 
-        "SQS queue", 
-        "EC2 instance", 
-        "DynamoDB table"], 
+        "GKE does not use master nodes to control child nodes.", 
+        "You need to spin up a compute instance and set it up as the master node.", 
+        "The master nodes are reated automatuically by GKE", 
+        "None of the above"], 
         # The correct answer
         "c")  
 ]

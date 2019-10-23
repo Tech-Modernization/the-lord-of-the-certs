@@ -16,22 +16,18 @@ def health_check():
     print(f'\n===========================================================================================================\n')
 
 # # Print the prologue and logo
-# intro_text()
-# main_logo()
+intro_text()
+main_logo()
 
 # Prompt user for name and then welcome
-# hero = "Paul"
 hero = input('Welcome Hero! Please tell me your name so I may record your noble deeds! : ')
 time.sleep(0.05)
 print_quick("\nWelcome " + hero + "!\nThis is your story....\n")
 
 # Print the initial quest text
-# quest_text()
+quest_text()
 
-# Instantiate players
-# To make the quiz more challenging and increase the number of correct answers 
-# needed to defeat each opponent, reduce the Hero's attack power
-#                   Health Atk
+# Create our hero
 player = Hero(hero, 2500,  1000)
 
 # Add all possible_opponents from class file into the opponents list
@@ -78,9 +74,6 @@ while quest:
                 player.take_damage(opponent_dmg)
                 print(f'\n{bcolors.FAIL}{bcolors.BOLD}Oh dear! {player.name} got the answer wrong! The correct answer was {question.correct}! {opponent.name} dealt {opponent_dmg} damage to {player.name}!{bcolors.ENDC}')
                 time.sleep(1)
-            # Ensures health bars are displayed after each question, to allow player to track progress.
-            health_check()
-            time.sleep(1)
             # Check the status of both players after each question, otherwise players will answer questions when dead (or opponent defeated)
             # Check is player HP is zero, if so break all loops and fail the questi
             if player.get_hp() == 0:
@@ -95,6 +88,9 @@ while quest:
                 # Delete the opponent from the list so the same opponent is not generated multiple times
                 opponents.remove(opponent)
                 break
+            # Ensures health bars are displayed after each question, to allow player to track progress.
+            health_check()
+            time.sleep(1)
         # If there are still opponents remaining, print message and break loop, goes back to generate a new opponent
         if len(opponents) > 0:
             time.sleep(1)

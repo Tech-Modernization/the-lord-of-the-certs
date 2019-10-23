@@ -6,19 +6,6 @@ Question = namedtuple("Question", "question choices correct")
 # Create the Question objects and ensure each one has a different variable name so they can be referenced by the Opponent objects
 # All the questions that belong to the Solutions Architect Associate Course
 cka_questions =  [
-    Question("""An application saves the logs to an S3 bucket. A user wants to keep the logs for one month for
-troubleshooting purposes, and then purge the logs.
-
-What feature will enable this?""", 
-    # The possible answers
-    [
-        "Adding a bucket policy on the S3 bucket.", 
-        "Configuring lifecycle configuration rules on the S3 bucket.", 
-        "Creating an IAM policy for the S3 bucket.", 
-        "Enabling CORS on the S3 bucket."
-    ], 
-    # The correct answer
-    "b"), 
 
     Question("""Company salespeople upload their sales figures daily. A Solutions Architect needs a durable storage
 solution for these documents that also protects against users accidentally deleting important

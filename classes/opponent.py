@@ -61,5 +61,5 @@ class Question:
 # List possible opponents that can be randomly selected from
 possible_opponents = [Opponent("AWS Solutions Architect Associate", 5000, 1000, saa_questions),
                       Opponent("Azure Fundamentals", 3000, 1000, af_questions),
-                      Opponent("Google Cloud Associate", 3000, 1000, gca_questions),
-                      Opponent("Certified Kubernetes Administrator", 4000, 1000, cka_questions)]
+                      Opponent("Google Cloud Associate", 4000, 1000, gca_questions)]
+                      #Opponent("Certified Kubernetes Administrator", 4000, 1000, cka_questions)]
