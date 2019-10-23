@@ -16,9 +16,11 @@ def print_slow(str):
 def intro_text():
     print_quick("\nIn a world of failed cloud migrations, Waterfall projects and unsecured S3 buckets...")
     print_slow("\n" + "...")
-    print_quick("\nOne consultancy stands apart. It's mission: to save their clients from themselves, and from the pitfalls of bad digital transformations!")
+    print_quick("\nOne consultancy stands apart. It's mission: to save their clients from lift-and-shift cloud migrations,\n") 
+    print_quick("stifling internal processes and poorly-executed digital transformations!")
     print_slow("\n" + "...")
-    print_quick("\nEach Contino consultant is duty-bound to do battle with the forces of the cloud and cloud-native technologies, and to obtain the coveted certifications that mark them out among their peers as wise and all-knowing.")
+    print_quick("\nEach Contino consultant is duty-bound to do battle with the forces of the cloud and cloud-native technologies,\n")
+    print_quick("and to obtain the coveted certifications that mark them out among their peers as wise and all-knowing.")
     print_slow("\n" + "...")
     print_quick("\nOnly those who can defeat all the exams and obtain each one of the certifications can receive the coveted title of: 'Master Consultant'.")
     print_slow("\n" + "...")

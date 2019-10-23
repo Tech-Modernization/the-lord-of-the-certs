@@ -6,103 +6,91 @@ Question = namedtuple("Question", "question choices correct")
 # Create the Question objects and ensure each one has a different variable name so they can be referenced by the Opponent objects
 # All the questions that belong to the Solutions Architect Associate Course
 af_questions =  [
-    Question("""An application saves the logs to an S3 bucket. A user wants to keep the logs for one month for
-troubleshooting purposes, and then purge the logs.
 
-What feature will enable this?""", 
+    # Practice exam question 3
+    Question("""Your company plans to move several servers to Azure.
+The company's compliance policy states that a server named FinServer must be on a separate network segment.
+You are evaluating which Azure services can be used to meet the compliance policy requirements.
+
+Which Azure solution should you recommend?""", 
     # The possible answers
     [
-        "Adding a bucket policy on the S3 bucket.", 
-        "Configuring lifecycle configuration rules on the S3 bucket.", 
-        "Creating an IAM policy for the S3 bucket.", 
-        "Enabling CORS on the S3 bucket."
+        "A resource group for FinServer and another resource group for all the other servers.", 
+        "A virtual network for FinServer and another virtual network for all the other servers.", 
+        "A VPN for FinServer and a virtual network gateway for each other server.", 
+        "One resource group for all the servers and a resource lock for FinServer."
     ], 
     # The correct answer
     "b"), 
 
-    Question("""Company salespeople upload their sales figures daily. A Solutions Architect needs a durable storage
-solution for these documents that also protects against users accidentally deleting important
-documents.
+    # Practice exam question 4
+    Question("""You plan to map a network drive from several computers that run Windows 10 to Azure Storage. 
+You need to create a storage solution in Azure for the planned mapped drive.
 
-Which action will protect against unintended user actions?""", 
+What should you create?""", 
     # The possible answers
     [
-        "Store data in an EBS volume and create snapshots once a week.", 
-        "Store data in an S3 bucket and enable versioning.", 
-        "Store data in two S3 buckets in different AWS regions.", 
-        "Store data on EC2 instance storage."], 
+        "An Azure SQL database", 
+        "A virtual machine data disk", 
+        "A Files service in a storage account", 
+        "A Blobs service in a storage account"], 
     # The correct answer
-    "b"),
+    "c"),
 
-    Question("""A Solutions Architect is designing a critical business application with a relational database that runs
-on an EC2 instance. It requires a single EBS volume that can support up to 16,000 IOPS.
+    # Practice exam question 6
+    Question("""Your company plans to migrate all its network resources to Azure.
+You need to start the planning process by exploring Azure.
 
-Which Amazon EBS volume type can meet the performance requirements of this application?""", 
+What should you create first?""", 
     # The possible answers
     [
-        "EBS Provisioned IOPS SSD", 
-        "EBS Throughput Optimized HDD", 
-        "EBS General Purpose SSD", 
-        "EBS Cold HDD"
+        "A subscription", 
+        "A resource group", 
+        "A virtual network", 
+        "A management group"
     ], 
     # The correct answer
     "a"),
 
-    Question("""An application running on EC2 instances processes sensitive information stored on Amazon S3. The
-information is accessed over the Internet. The security team is concerned that the Internet
-connectivity to Amazon S3 is a security risk.
+    # Practice exam question 7
+    Question("""You have an on-premises application that sends email notifications automatically based on a rule.
+You plan to migrate the application to Azure.
+You need to recommend a serverless computing solution for the application.
 
-Which solution will resolve the security concern?""", 
+What should you include in the recommendation?""", 
     # The possible answers
     [
-        "Access the data through an Internet Gateway.", 
-        "Access the data through a VPN connection.", 
-        "Access the data through a NAT Gateway.", 
-        "Access the data through a VPC endpoint for Amazon S3."], 
+        "A web app", 
+        "A server image in Azure Marketplace", 
+        "A logic app", 
+        "An API app"], 
         # The correct answer
-        "d"),
+        "c"),
 
-    Question("""A company is storing an access key (access key ID and secret access key) in a text file on a custom
-AMI. The company uses the access key to access DynamoDB tables from instances created from the
-AMI. The security team has mandated a more secure solution.
+    # Practice exam question 8
+    Question("""You plan to deploy a website to Azure. The website will be accessed by users worldwide and will host large video files.
+You need to recommend which Azure feature must be used to provide the best video playback experience.
 
-Which solution will meet the security team’s mandate?""", 
+What should you recommend?""", 
     # The possible answers
     [
-        "Put the access key in an S3 bucket, and retrieve the access key on boot from the instance.", 
-        "Pass the access key to the instances through instance user data.", 
-        "Obtain the access key from a key server launched in a private subnet.", 
-        "Create an IAM role with permissions to access the table, and launch all instances with the new role."], 
+        "An application gateway", 
+        "An Azure ExpressRoute circuit", 
+        "A content delivery network (CDN)", 
+        "An Azure Traffic Manager profile"], 
         # The correct answer
-        "d"),
+        "c"),
 
-    Question("""An application requires a highly available relational database with an initial storage capacity of 8 TB.
-The database will grow by 8 GB every day. To support expected traffic, at least eight read replicas will
-be required to handle database reads.
+    # Practice exam question 13
+    Question("""Your company plans to deploy an Artificial Intelligence (AI) solution in Azure.
 
-Which option will meet these requirements?""", 
+What should the company use to build, test, and deploy predictive analytics solutions?""", 
     # The possible answers
     [
-        "DynamoDB", 
-        "Amazon S3", 
-        "Amazon Aurora", 
-        "Amazon Redshift"], 
+        "Azure Logic Apps", 
+        "Azure Machine Learning Studio", 
+        "Azure Batch", 
+        "Azure Cosmos DB"], 
         # The correct answer
-        "c"),  
-
-    Question("""A web application allows customers to upload orders to an S3 bucket. The resulting Amazon S3
-events trigger a Lambda function that inserts a message to an SQS queue. A single EC2 instance
-reads messages from the queue, processes them, and stores them in an DynamoDB table partitioned
-by unique order ID. Next month traffic is expected to increase by a factor of 10 and a Solutions
-Architect is reviewing the architecture for possible scaling problems.
-
-Which component is MOST likely to need re-architecting to be able to scale to accommodate the new traffic?""", 
-    # The possible answers
-    [
-        "Lambda function", 
-        "SQS queue", 
-        "EC2 instance", 
-        "DynamoDB table"], 
-        # The correct answer
-        "c")  
+        "a")  
 ]
