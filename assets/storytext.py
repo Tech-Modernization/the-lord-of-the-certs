@@ -25,9 +25,6 @@ def intro_text():
     print_quick("Do YOU have what it takes?")
     time.sleep(2)
 
-def fillspace():
-    print_quick("..." + "\n\n" + "..." + "\n\n" + "..." + "\n\n")
-
 def quest_text():
     print_quick("\nOur hero is new to Contino.")
     print_slow("\n" + "..." + "\n")

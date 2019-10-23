@@ -3,9 +3,9 @@ from classes.hero import Hero
 from classes.opponent import *
 from assets.storytext import intro_text, quest_text, epilogue_text
 from assets.logos import *
-import random
-import sys
+import random, sys, string
 
+# Define the health check on both player and opponent so it can be called repeatedly
 def health_check():
     print(f'\n\n============================================================\n')
     # Print the health bars of all participants
@@ -13,7 +13,6 @@ def health_check():
     player.get_stats()
     print(f'\n')
     opponent.get_stats()
-
 
 # # Print the prologue and logo
 # intro_text()
@@ -28,7 +27,8 @@ hero = "Paul"
 # quest_text()
 
 # Instantiate players
-# To make the quiz more challenging and increase the number of correct answers needed to defeat each opponent, reduce the Hero's attack power
+# To make the quiz more challenging and increase the number of correct answers 
+# needed to defeat each opponent, reduce the Hero's attack power
 #                   Health Atk
 player = Hero(hero, 1,  3000)
 
@@ -37,7 +37,7 @@ opponents = possible_opponents
 
 quest = True
 
-# quiz code
+# The actual program encased in a while loop that is broken either when player is defeated or no opponents remain
 while quest:
     create_opponent = True
     while create_opponent:
@@ -48,7 +48,9 @@ while quest:
         health_check()
         for question in opponent.questions:
             print(question.question)
-            user_answer = input(question.choices).lower()
+            for line in zip(string.ascii_lowercase, question.choices):
+                print(") ".join(line))
+            user_answer = input().lower()
             if user_answer in question.correct:
                 dmg = player.generate_damage()
                 opponent.take_damage(dmg)
@@ -69,6 +71,9 @@ while quest:
                 opponents.remove(opponent)
                 break
         if len(opponents) > 0:
+            time.sleep(1)
+            print('\nOh no, something else is coming this way...')
+            time.sleep(1)
             break
         elif len(opponents) == 0:
             quest_succeeded = True

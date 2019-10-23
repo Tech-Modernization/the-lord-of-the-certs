@@ -59,25 +59,25 @@ class Question:
 Question = namedtuple("Question", "question answer choices correct")
 
 # Create the Question objects and ensure each one has a different variable name so they can be referenced by the Opponent objects
-saa_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", "a) 1\nb) 2\nc) 3\nd) 4\nAnswer: ", "b"), 
-                    Question("What is 2 + 2?", "2 + 2 is 4.", "a) 1\nb) 4\nc) 3\nd) 4\nAnswer: ", "b"),
-                    Question("What is 3 + 3?", "3 + 3 is 6.", "a) 1\nb) 6\nc) 3\nd) 4\nAnswer: ", "b"),
-                    Question("What is 4 + 4?", "4 + 4 is 8.", "a) 1\nb) 8\nc) 3\nd) 4\nAnswer: ", "b")]
+saa_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
+                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
+                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
+                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
 
-af_questions =  [Question("What is a + a?", "a + a is aa.", "a) aa\nb) ab\nc) ac\nd) zz\nAnswer: ", "a"), 
-                    Question("What is c + a?", "c + a is ca.", "a) 1\nb) ca\nc) zz\nd) xx\nAnswer: ", "b"),
-                    Question("What is x + y?", "x + y is xy.", "a) 1\nb) 6\nc) xy\nd) 4\nAnswer: ", "c"),
-                    Question("What is z + z?", "z + z is zz.", "a) 1\nb) 8\nc) 3\nd) zz\nAnswer: ", "d")]
+af_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
+                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
+                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
+                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
 
-gca_questions =  [Question("What is a + a?", "a + a is aa.", "a) aa\nb) ab\nc) ac\nd) zz\nAnswer: ", "a"), 
-                    Question("What is c + a?", "c + a is ca.", "a) 1\nb) ca\nc) zz\nd) xx\nAnswer: ", "b"),
-                    Question("What is x + y?", "x + y is xy.", "a) 1\nb) 6\nc) xy\nd) 4\nAnswer: ", "c"),
-                    Question("What is z + z?", "z + z is zz.", "a) 1\nb) 8\nc) 3\nd) zz\nAnswer: ", "d")]
+gca_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
+                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
+                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
+                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
 
-cka_questions =  [Question("What is a + a?", "a + a is aa.", "a) aa\nb) ab\nc) ac\nd) zz\nAnswer: ", "a"), 
-                    Question("What is c + a?", "c + a is ca.", "a) 1\nb) ca\nc) zz\nd) xx\nAnswer: ", "b"),
-                    Question("What is x + y?", "x + y is xy.", "a) 1\nb) 6\nc) xy\nd) 4\nAnswer: ", "c"),
-                    Question("What is z + z?", "z + z is zz.", "a) 1\nb) 8\nc) 3\nd) zz\nAnswer: ", "d")]
+cka_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
+                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
+                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
+                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
 
 # List possible opponents that can be randomly selected from
 possible_opponents = [Opponent("AWS Solutions Architect Associate", 2000, 1000, saa_questions),

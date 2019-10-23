@@ -2,7 +2,7 @@ from classes.colours import bcolors
 import time
 
 def main_logo():
-   print(f'''\n\n\n{bcolors.OKGREEN}{bcolors.BOLD} 
+   print(f'''\n\n{bcolors.OKGREEN}{bcolors.BOLD} 
   ________            ______          __  _ _____            __          _____ __                     
  /_  __/ /_  ___     / ____/__  _____/ /_(_) __(_)________ _/ /____     / ___// /___ ___  _____  _____
   / / / __ \/ _ \   / /   / _ \/ ___/ __/ / /_/ / ___/ __ `/ __/ _ \    \__ \/ / __ `/ / / / _ \/ ___/
@@ -14,7 +14,7 @@ def main_logo():
    time.sleep(5)
 
 def game_over():
-   print(f'''\n\n\n{bcolors.FAIL}{bcolors.BOLD} 
+   print(f'''\n\n{bcolors.FAIL}{bcolors.BOLD} 
 
       ______                        ____                 
      / ____/___ _____ ___  ___     / __ \_   _____  _____
@@ -23,10 +23,10 @@ def game_over():
    \____/\__,_/_/ /_/ /_/\___/   \____/ |___/\___/_/     
                                                       
 
-   {bcolors.ENDC}\n\n\n''')
+   {bcolors.ENDC}\n\n''')
 
 def master_consultant():
-   print(f'''\n\n\n{bcolors.OKBLUE}{bcolors.BOLD} 
+   print(f'''\n\n{bcolors.OKBLUE}{bcolors.BOLD} 
 
     __  ______   _____________________     __________  _   _______ __  ____  _________    _   ________
    /  |/  /   | / ___/_  __/ ____/ __ \   / ____/ __ \/ | / / ___// / / / / /_  __/   |  / | / /_  __/
@@ -35,7 +35,7 @@ def master_consultant():
 /_/  /_/_/  |_/____//_/ /_____/_/ |_|   \____/\____/_/ |_//____/\____/_____/_/ /_/  |_/_/ |_/ /_/     
                                                                                                       
                                                       
-   {bcolors.ENDC}\n\n\n''')
+   {bcolors.ENDC}\n\n''')
 
 
 
