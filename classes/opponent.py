@@ -80,8 +80,8 @@ cka_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"]
                   Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
 
 # List possible opponents that can be randomly selected from
-possible_opponents = [Opponent("AWS Solutions Architect Associate", 2000, 1000, saa_questions),
-                      Opponent("Google Cloud Associate", 1000, 1000, af_questions),
-                      Opponent("Azure Fundamentals", 1000, 1000, gca_questions),
-                      Opponent("Certified Kubernetes Administrator", 1000, 1000, cka_questions)]
+possible_opponents = [Opponent("AWS Solutions Architect Associate", 4000, 1000, saa_questions),
+                      Opponent("Google Cloud Associate", 3000, 1000, af_questions),
+                      Opponent("Azure Fundamentals", 2000, 1000, gca_questions),
+                      Opponent("Certified Kubernetes Administrator", 4000, 1000, cka_questions)]
 

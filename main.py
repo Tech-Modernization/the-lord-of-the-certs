@@ -15,66 +15,83 @@ def health_check():
     opponent.get_stats()
 
 # # Print the prologue and logo
-# intro_text()
-# main_logo()
+intro_text()
+main_logo()
 
 # Prompt user for name and then welcome
-hero = "Paul"
-# hero = input('Welcome Hero! Please tell me your name so I may record your noble deeds! : ')
-# print(f'\nWelcome {hero}!\nThis is your story....\n')
+# hero = "Paul"
+hero = input('Welcome Hero! Please tell me your name so I may record your noble deeds! : ')
+time.sleep(0.05)
+print(f'\nWelcome {hero}!\nThis is your story....\n')
 
 # Print the initial quest text
-# quest_text()
+quest_text()
 
 # Instantiate players
 # To make the quiz more challenging and increase the number of correct answers 
 # needed to defeat each opponent, reduce the Hero's attack power
 #                   Health Atk
-player = Hero(hero, 1,  3000)
+player = Hero(hero, 2500,  1000)
 
-# Instantiate opponents
+# Add all possible_opponents from class file into the opponents list
 opponents = possible_opponents
 
+# Set the quest loop to start the quest
 quest = True
 
 # The actual program encased in a while loop that is broken either when player is defeated or no opponents remain
 while quest:
+    # Assumes quest is still running unless loop broken below.
     create_opponent = True
     while create_opponent:
+        # Randonly selects opponent from list 
         opponent_choice = random.randint(0, len(opponents) -1)
         opponent = opponents[opponent_choice]
         print(f'\n\n{bcolors.FAIL}{bcolors.BOLD}A wild {opponent.name} attacked!{bcolors.ENDC}')
         time.sleep(1)
+        # Display health bars and "set the scene"
         health_check()
+        # Loop over all questions set for this opponent until opponent or player is defeated
+        # Need to code an outcome if questions are exhausted but neither of the above has occurred
         for question in opponent.questions:
             print(question.question)
+            # Will neatly print out the choices from the question on a newline each preeded with some formatting
             for line in zip(string.ascii_lowercase, question.choices):
                 print(") ".join(line))
             user_answer = input().lower()
+            # Player answered successfully and causes damage to opponent
             if user_answer in question.correct:
                 dmg = player.generate_damage()
                 opponent.take_damage(dmg)
                 print(f'\n{player.name} got the answer correct, and dealt {dmg} damage to {opponent.name}!')
+            # If player doesn't answer correctly, code assumes incorrect answer and causes damage to player
             else:
                 opponent_dmg = opponent.generate_damage()
                 player.take_damage(opponent_dmg)
                 print(f'\nOh dear! {player.name} got the answer wrong! The correct answer was {question.answer}. {opponent.name} dealt {opponent_dmg} damage to {player.name}!')
+            # Ensures health bars are displayed after each question, to allow player to track progress.
             health_check()
+            # Check the status of both players after each question, otherwise players will answer questions when dead (or opponent defeated)
+            # Check is player HP is zero, if so break all loops and fail the questi
             if player.get_hp() == 0:
                 print(f'\n{bcolors.FAIL}{bcolors.BOLD}{player.name} has been defeated!{bcolors.ENDC}')
                 quest_succeeded = False
                 create_opponent = False
                 quest = False
                 break
+            # Check if opponent HP is zero, if so break question loop and program moves back to selecting a new opponent
             if opponent.get_hp() == 0:
                 print(f'\n{opponent.name} has been defeated!')
+                # Delete the opponent from the list so the same opponent is not generated multiple times
                 opponents.remove(opponent)
                 break
+        # If there are still opponents remaining, print message and break loop, goes back to generate a new opponent
         if len(opponents) > 0:
             time.sleep(1)
             print('\nOh no, something else is coming this way...')
             time.sleep(1)
             break
+        # If all opponents defeated, mark quest as succeeded, break quest loop
         elif len(opponents) == 0:
             quest_succeeded = True
             quest = False
@@ -82,6 +99,7 @@ while quest:
         else:
             print("Error: Length of 'opponents' neither 0 or > 0. How has this occurred?!")            
 
+# Conditional output depending on result of quest
 if quest_succeeded == True:
     time.sleep(1)
     print(f'''{bcolors.OKGREEN}{bcolors.BOLD}\nCongratulations, you have defeated all the certifications that opposed you!

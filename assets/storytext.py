@@ -23,7 +23,7 @@ def intro_text():
     print_quick("Only those who can defeat all the exams and obtain each one of the certifications can receive the title of 'Master Consultant'.")
     print_slow("\n" + "..." + "\n")
     print_quick("Do YOU have what it takes?")
-    time.sleep(2)
+    time.sleep(2) 
 
 def quest_text():
     print_quick("\nOur hero is new to Contino.")
