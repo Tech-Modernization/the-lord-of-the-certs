@@ -1,7 +1,7 @@
 from classes.colours import bcolors
 from classes.hero import Hero
 from classes.opponent import *
-from assets.storytext import intro_text, quest_text, epilogue_text
+from assets.storytext import intro_text, quest_text, print_slow, print_quick
 from assets.logos import *
 import random, sys, string
 
@@ -22,7 +22,7 @@ main_logo()
 # hero = "Paul"
 hero = input('Welcome Hero! Please tell me your name so I may record your noble deeds! : ')
 time.sleep(0.05)
-print(f'\nWelcome {hero}!\nThis is your story....\n')
+print_quick("\nWelcome " + hero + "!\nThis is your story....\n")
 
 # Print the initial quest text
 quest_text()
@@ -49,12 +49,14 @@ while quest:
         opponent = opponents[opponent_choice]
         print(f'\n\n{bcolors.FAIL}{bcolors.BOLD}A wild {opponent.name} attacked!{bcolors.ENDC}')
         time.sleep(1)
+        print(f'\n\n{bcolors.FAIL}{bcolors.BOLD}To defeat it, answer the questions!{bcolors.ENDC}')
+        time.sleep(1)
         # Display health bars and "set the scene"
         health_check()
         # Loop over all questions set for this opponent until opponent or player is defeated
         # Need to code an outcome if questions are exhausted but neither of the above has occurred
         for question in opponent.questions:
-            print(question.question)
+            print("\n" + question.question)
             # Will neatly print out the choices from the question on a newline each preeded with some formatting
             for line in zip(string.ascii_lowercase, question.choices):
                 print(") ".join(line))

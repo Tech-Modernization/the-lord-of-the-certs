@@ -23,8 +23,8 @@ class Hero:
     def get_max_hp(self):
         return self.maxhp
 
+    # This function is used in the "health_check" function in main program. Beware changes!
     def get_stats(self):
-        # All the code related to HP bar control
         hp_bar = ""
         hp_bar_ticks = ((self.hp / self.maxhp) * 100) /2
         while hp_bar_ticks > 0:

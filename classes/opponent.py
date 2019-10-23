@@ -25,8 +25,8 @@ class Opponent:
     def get_max_hp(self):
         return self.maxhp
 
+    # This function is used in the "health_check" function in main program. Beware changes!
     def get_stats(self):
-        # All the code related to HP bar control
         hp_bar = ""
         hp_bar_ticks = ((self.hp / self.maxhp) * 100) /2
         while hp_bar_ticks > 0:
@@ -55,7 +55,7 @@ class Question:
         self.choices = choices
         self.correct = correct
 
-# Set the object type "Question" as a named Tuple
+# Set the object type "Question" as a Named Tuple, enabling us to call it section by section in the main program
 Question = namedtuple("Question", "question answer choices correct")
 
 # Create the Question objects and ensure each one has a different variable name so they can be referenced by the Opponent objects
