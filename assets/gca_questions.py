@@ -9,7 +9,7 @@ gca_questions =  [
 
     Question("""You are working on a project called 'contino', and want to list all the roles assigned to users in the project.
     
-    Which of the following gcloud commands would you use?""", 
+Which of the following gcloud commands would you use?""", 
     # The possible answers
     [
         "gcloud iam list contino", 
