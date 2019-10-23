@@ -1,7 +1,7 @@
-# the-certificate-slayer
+# the-Lord-of-the-Certs
 
 This is a small RPG-battle style game written in Python3.
-The player must answer multiple-choice questions to defeat a randomly-generated certification exam.
+The player must answer multiple-choice questions to defeat randomly-generated certification exams.
 Players who defeat all the certifications in a single run are granted the title of "Master Consultant".
 
 The code is based on a Udemy course written by Nick Germaine (https://github.com/nickgermaine), and my original fork (https://github.com/paulbygrave/cert-slayer).
@@ -12,7 +12,7 @@ The code is intended to be a fun learning resource for teaching basic Python ski
 
 The easiest way to simply try the code is to run the pre-built Docker image in Docker Hub:
 
-$ docker run -it --name cert-slayer paulbygrave/cert-slayer
+$ docker run -it --name lotc paulbygrave/the-Lord-of-the-Certs
 
 ### Installing Docker for Mac
 
@@ -61,8 +61,6 @@ $ python3 main.py
 
 ## Desired feature additions
 
-Random Enemy generator,
-Save character states between battles,
-Item rewards for victory,
-External leaderboard for completionists
-
+Shuffle the questions into random order,
+External leaderboard for tracking completions,
+Additional exams and questions added
