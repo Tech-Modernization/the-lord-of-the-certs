@@ -7,16 +7,17 @@ import random, sys, string
 
 # Define the health check on both player and opponent so it can be called repeatedly
 def health_check():
-    print(f'\n\n============================================================\n')
+    print(f'\n\n===========================================================================================================\n')
     # Print the health bars of all participants
     print(f'NAME                                                     HP                                      ')
     player.get_stats()
     print(f'\n')
     opponent.get_stats()
+    print(f'\n===========================================================================================================\n')
 
 # # Print the prologue and logo
-intro_text()
-main_logo()
+# intro_text()
+# main_logo()
 
 # Prompt user for name and then welcome
 # hero = "Paul"
@@ -25,7 +26,7 @@ time.sleep(0.05)
 print_quick("\nWelcome " + hero + "!\nThis is your story....\n")
 
 # Print the initial quest text
-quest_text()
+# quest_text()
 
 # Instantiate players
 # To make the quiz more challenging and increase the number of correct answers 
@@ -56,23 +57,30 @@ while quest:
         # Loop over all questions set for this opponent until opponent or player is defeated
         # Need to code an outcome if questions are exhausted but neither of the above has occurred
         for question in opponent.questions:
-            print("\n" + question.question)
+            print("\nYour opponent, " + opponent.name + " asks:\n\n") 
+            time.sleep(0.5)
+            print(question.question + "\n")
             # Will neatly print out the choices from the question on a newline each preeded with some formatting
             for line in zip(string.ascii_lowercase, question.choices):
                 print(") ".join(line))
+            print("\n")
             user_answer = input().lower()
+            time.sleep(1)
             # Player answered successfully and causes damage to opponent
             if user_answer in question.correct:
                 dmg = player.generate_damage()
                 opponent.take_damage(dmg)
-                print(f'\n{player.name} got the answer correct, and dealt {dmg} damage to {opponent.name}!')
+                print(f'\n{bcolors.OKGREEN}{bcolors.BOLD}{player.name} got the answer correct, and dealt {dmg} damage to {opponent.name}!{bcolors.ENDC}')
+                time.sleep(1)
             # If player doesn't answer correctly, code assumes incorrect answer and causes damage to player
             else:
                 opponent_dmg = opponent.generate_damage()
                 player.take_damage(opponent_dmg)
-                print(f'\nOh dear! {player.name} got the answer wrong! The correct answer was {question.answer}. {opponent.name} dealt {opponent_dmg} damage to {player.name}!')
+                print(f'\n{bcolors.FAIL}{bcolors.BOLD}Oh dear! {player.name} got the answer wrong! The correct answer was {question.correct}! {opponent.name} dealt {opponent_dmg} damage to {player.name}!{bcolors.ENDC}')
+                time.sleep(1)
             # Ensures health bars are displayed after each question, to allow player to track progress.
             health_check()
+            time.sleep(1)
             # Check the status of both players after each question, otherwise players will answer questions when dead (or opponent defeated)
             # Check is player HP is zero, if so break all loops and fail the questi
             if player.get_hp() == 0:
@@ -108,6 +116,7 @@ if quest_succeeded == True:
         \nYou have obtained the title of ...{bcolors.ENDC}''')
     time.sleep(1)
     master_consultant()
+    print(f'{bcolors.OKGREEN}{bcolors.BOLD}\nPlease feel free to contribute more questions, or even add a new opponent to this program via a pull request!{bcolors.ENDC}')
 elif quest_succeeded == False:
     time.sleep(1)
     print(f'''{bcolors.FAIL}{bcolors.BOLD}\nOh dear, you failed to answer enough questions correctly and the certifications have overwhelmed you!

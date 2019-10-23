@@ -1,6 +1,9 @@
 import random
-from collections import namedtuple
 from .colours import bcolors
+from assets.af_questions import af_questions
+from assets.saa_questions import saa_questions
+from assets.gca_questions import gca_questions
+from assets.cka_questions import cka_questions
  
 class Opponent:
     def __init__(self, name, hp, atk, questions):
@@ -55,33 +58,8 @@ class Question:
         self.choices = choices
         self.correct = correct
 
-# Set the object type "Question" as a Named Tuple, enabling us to call it section by section in the main program
-Question = namedtuple("Question", "question answer choices correct")
-
-# Create the Question objects and ensure each one has a different variable name so they can be referenced by the Opponent objects
-saa_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
-                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
-                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
-                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
-
-af_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
-                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
-                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
-                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
-
-gca_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
-                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
-                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
-                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
-
-cka_questions =  [Question("What is 1 + 1?", "1 + 1 is 2.", ["1", "2", "3", "4"], "b"), 
-                  Question("What is 2 + 2?", "2 + 2 is 4.",["1", "4", "28", "14"], "b"),
-                  Question("What is 3 + 3?", "3 + 3 is 6.", ["1", "5", "7", "6"], "d"),
-                  Question("What is 4 + 4?", "4 + 4 is 8.", ["1", "4", "8", "14"], "c")]
-
 # List possible opponents that can be randomly selected from
-possible_opponents = [Opponent("AWS Solutions Architect Associate", 4000, 1000, saa_questions),
-                      Opponent("Google Cloud Associate", 3000, 1000, af_questions),
-                      Opponent("Azure Fundamentals", 2000, 1000, gca_questions),
+possible_opponents = [Opponent("AWS Solutions Architect Associate", 5000, 1000, saa_questions),
+                      Opponent("Azure Fundamentals", 2000, 1000, af_questions),
+                      Opponent("Google Cloud Associate", 3000, 1000, gca_questions),
                       Opponent("Certified Kubernetes Administrator", 4000, 1000, cka_questions)]
-
