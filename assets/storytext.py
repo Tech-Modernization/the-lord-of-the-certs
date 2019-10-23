@@ -16,8 +16,8 @@ def print_slow(str):
 def intro_text():
     print_quick("\nIn a world of failed cloud migrations, Waterfall projects and unsecured S3 buckets...")
     print_slow("\n" + "...")
-    print_quick("\nOne consultancy stands apart. It's mission: to save their clients from lift-and-shift cloud migrations,\n") 
-    print_quick("stifling internal processes and poorly-executed digital transformations!")
+    print_quick("\nOne consultancy stands apart. Their mission: to save clients from lift-and-shift cloud migrations,\n") 
+    print_quick("stifling internal processes and poorly-executed digital & cloud transformations!")
     print_slow("\n" + "...")
     print_quick("\nEach Contino consultant is duty-bound to do battle with the forces of the cloud and cloud-native technologies,\n")
     print_quick("and to obtain the coveted certifications that mark them out among their peers as wise and all-knowing.")
@@ -32,6 +32,6 @@ def quest_text():
     print_slow("\n" + "...")
     print_quick("\nYou've completed your onboarding, setup your new equipment, checked in with PeopleOps and decided to relax...")
     print_slow("\n" + "...")
-    print_quick("\nYou decide to walk through a grassy meadow, when you hear a rustle...")
+    print_quick("\nYou decide to walk through a grassy meadow (for some reason), when you hear a rustle...")
     print_slow("\n" + "...")
     time.sleep(1)
