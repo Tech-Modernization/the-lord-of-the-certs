@@ -4,7 +4,7 @@ This is a small RPG-battle style game written in Python3.
 The player must answer multiple-choice questions to defeat randomly-generated certification exams.
 Players who defeat all the certifications in a single run are granted the title of "Master Consultant".
 
-The code is based on a Udemy course written by Nick Germaine (https://github.com/nickgermaine), and my original fork (https://github.com/paulbygrave/cert-slayer).
+The code is originally based on a Udemy course written by Nick Germaine (https://github.com/nickgermaine), and my original fork (https://github.com/paulbygrave/cert-slayer).
 The code is intended to be a fun learning resource for teaching basic Python skills and additional questions/certifications can be added by any Contini who wishes to contribute.
 
 
