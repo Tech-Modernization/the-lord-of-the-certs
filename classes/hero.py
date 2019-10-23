@@ -43,7 +43,7 @@ class Hero:
         else:
             current_hp = hp_string
         print("                                                         __________________________________________________ ")
-        print(bcolors.BOLD + self.name + ":  " +
+        print(bcolors.BOLD + str(self.name.ljust(40, ' ')) + ":  " +
             current_hp.ljust(11, " ") + "  |" + bcolors.OKGREEN + hp_bar + bcolors.ENDC + bcolors.BOLD + "|    ")
 
 
