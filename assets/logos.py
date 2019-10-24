@@ -13,7 +13,7 @@ def main_logo():
                       `-------'                                                       `-------'                      
                                                                                                                      
    {bcolors.ENDC}\n\n''')
-   time.sleep(5)
+   time.sleep(2)
 
 def game_over():
    print(f'''\n\n{bcolors.FAIL}{bcolors.BOLD} 

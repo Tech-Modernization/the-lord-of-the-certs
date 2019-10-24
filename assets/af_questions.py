@@ -92,5 +92,5 @@ What should the company use to build, test, and deploy predictive analytics solu
         "Azure Batch", 
         "Azure Cosmos DB"], 
         # The correct answer
-        "a")  
+        "b")  
 ]

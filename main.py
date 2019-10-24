@@ -52,6 +52,7 @@ while quest:
         health_check()
         # Loop over all questions set for this opponent until opponent or player is defeated
         # Need to code an outcome if questions are exhausted but neither of the above has occurred
+        random.shuffle(opponent.questions)
         for question in opponent.questions:
             print("\nYour opponent, " + opponent.name + " asks:\n\n") 
             time.sleep(0.5)
@@ -92,13 +93,17 @@ while quest:
             health_check()
             time.sleep(1)
         # If there are still opponents remaining, print message and break loop, goes back to generate a new opponent
-        if len(opponents) > 0:
+        if len(opponents) > 0 and player.get_hp() > 0:
             time.sleep(1)
-            print('\nOh no, something else is coming this way...')
+            print("\nOh no, something else is coming...\n")
+            break
+        elif len(opponents) > 0 and player.get_hp() == 0:
             time.sleep(1)
+            print("\nEverything fades to black...\n")
             break
         # If all opponents defeated, mark quest as succeeded, break quest loop
         elif len(opponents) == 0:
+            print("\nIs that all of them? Are we safe?\n")
             quest_succeeded = True
             quest = False
             create_opponent = False
