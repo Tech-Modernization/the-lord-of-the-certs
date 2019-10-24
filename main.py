@@ -61,7 +61,7 @@ while quest:
             for line in zip(string.ascii_lowercase, question.choices):
                 print(") ".join(line))
             print("\n")
-            user_answer = input().lower()
+            user_answer = input('Your Answer: ').lower()
             time.sleep(1)
             # Player answered successfully and causes damage to opponent
             if user_answer in question.correct:
@@ -120,7 +120,7 @@ if quest_succeeded == True:
     print(f'{bcolors.OKGREEN}{bcolors.BOLD}\nPlease feel free to contribute more questions, or even add a new opponent to this program via a pull request!{bcolors.ENDC}')
 elif quest_succeeded == False:
     time.sleep(1)
-    print(f'''{bcolors.FAIL}{bcolors.BOLD}\nOh dear, you failed to answer enough questions correctly and the certifications have overwhelmed you!
+    print(f'''{bcolors.FAIL}{bcolors.BOLD}\nYou failed to answer enough questions correctly and the certifications have overwhelmed you!
             \nPlease study harder and try again!{bcolors.ENDC}''')
     time.sleep(1)
     game_over()
