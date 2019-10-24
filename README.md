@@ -12,7 +12,7 @@ The code is intended to be a fun learning resource for teaching basic Python ski
 
 The easiest way to simply try the code is to run the pre-built Docker image in Docker Hub:
 
-$ docker run -it --name lotc paulbygrave/the-Lord-of-the-Certs
+$ docker run -it --name lotc paulbygrave/the-lord-of-the-certs
 
 ### Installing Docker for Mac
 
