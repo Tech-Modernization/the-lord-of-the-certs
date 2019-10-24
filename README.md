@@ -1,6 +1,6 @@
-# the-Lord-of-the-Certs
+# the-lord-of-the-certs
 
-This is a small RPG-battle style game written in Python3.
+This is a small multiple-choice quiz presented as an RPG-battle style game written in Python3.
 The player must answer multiple-choice questions to defeat randomly-generated certification exams.
 Players who defeat all the certifications in a single run are granted the title of "Master Consultant".
 
