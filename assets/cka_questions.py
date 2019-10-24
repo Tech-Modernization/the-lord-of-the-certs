@@ -53,6 +53,7 @@ True or False?""",
     [
         "kubectl create nginx --image=nginx", 
         "kubectl create nginx --image=nginx --restart=Never", 
+        "kubectl create nginx --image=nginx --restart=false", 
         "kubectl create pod --image=nginx"], 
         # The correct answer
         "b"),
@@ -61,7 +62,7 @@ True or False?""",
     # The possible answers
     [
         "The container runtime", 
-        "The network proy that runs each node", 
+        "The network proxy that runs each node", 
         "An agent that runs on each node in the cluster to ensure containers are running in a pod",
         "An agent that runs on each node in the cluster to ensure that the node is healthy"], 
         # The correct answer
