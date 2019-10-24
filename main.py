@@ -22,7 +22,7 @@ main_logo()
 # Prompt user for name and then welcome
 hero = input('Welcome Hero! Please tell me your name so I may record your noble deeds! : ')
 time.sleep(0.05)
-print_quick("\nWelcome " + hero + "!\nThis is your story....\n")
+print_quick("\nWelcome " + hero + "!\n")
 
 # Print the initial quest text
 quest_text()
